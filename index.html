@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قندک شاپ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==================== هدر ==================== -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-right">
+                <h1 class="shop-name-fa">قندک شاپ</h1>
+            </div>
+            <div class="header-center">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="لوگو" class="logo">
+                </a>
+            </div>
+            <div class="header-left">
+                <h2 class="shop-name-en">Ghandaak Shop</h2>
+                <a href="#" onclick="toggleCart(); return false;" class="cart-link-header">🛒 مشاهده سبد خرید</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== اسلایدر ==================== -->
+    <section class="slider">
+        <div class="slides">
+            <div class="slide active">
+                <img src="images/slide (1).jpg" alt="">
+
+            </div>
+            <div class="slide">
+                <img src="images/slide (2).jpg" alt=" ">
+
+            </div>
+            <div class="slide">
+                <img src="images/slide (3).jpg" alt=" ">
+
+            </div>
+                        <div class="slide">
+                <img src="images/slide (4).jpg" alt=" ">
+
+            </div>
+                        <div class="slide">
+                <img src="images/slide (5).jpg" alt=" ">
+
+            </div>
+                        <div class="slide">
+                <img src="images/slide (6).jpg" alt=" ">
+
+            </div>
+                        <div class="slide">
+                <img src="images/slide (7).jpg" alt=" ">
+
+            </div>
+                        <div class="slide">
+                <img src="images/slide (8).jpg" alt=" ">
+
+            </div>
+                        <div class="slide">
+                <img src="images/slide (9).jpg" alt=" ">
+
+            </div>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+            <span class="dot" onclick="goToSlide(4)"></span>
+            <span class="dot" onclick="goToSlide(5)"></span>
+            <span class="dot" onclick="goToSlide(6)"></span>
+            <span class="dot" onclick="goToSlide(7)"></span>
+            <span class="dot" onclick="goToSlide(8)"></span>
+        </div>
+    </section>
+
+    <!-- ==================== دسته‌بندی‌ها ==================== -->
+    <section class="categories">
+        <h2 class="section-title">دسته‌بندی محصولات</h2>
+        <div class="cat-container">
+           <div class="cat-box">
+               <h3>بدلیجات</h3>
+               <a href="#products" class="cat-link" onclick="filterCategory('bijouterie'); return false;">مشاهده</a>
+           </div>
+           <div class="cat-box">
+               <h3>اکسسوری مو</h3>
+               <a href="#products" class="cat-link" onclick="filterCategory('hair'); return false;">مشاهده</a>
+           </div>
+           <div class="cat-box">
+               <h3>جوراب</h3>
+               <a href="#products" class="cat-link" onclick="filterCategory('socks'); return false;">مشاهده</a>
+           </div>
+           <div class="cat-box">
+               <h3>دسته کلید</h3>
+               <a href="#products" class="cat-link" onclick="filterCategory('keychain'); return false;">مشاهده</a>
+           </div>
+           <div class="cat-box">
+               <h3>بهداشتی</h3>
+               <a href="#products" class="cat-link" onclick="filterCategory('hygiene'); return false;">مشاهده</a>
+           </div>
+        </div>
+    </section>
+
+    <!-- ==================== محصولات ==================== -->
+    <section class="products" id="products">
+        <h2 class="section-title">همه محصولات</h2>
+        <div class="subcategory-buttons" id="subcategoryButtons" style="display:none;">
+           <button class="subcat-btn active" onclick="filterSubcategory('all')">همه</button>
+    <!-- دکمه‌ها با JavaScript پر می‌شن -->
+        </div>
+        <div style="text-align:center; margin-bottom:20px;">
+           <button class="btn" onclick="showAllProducts()" style="margin:5px;">نمایش همه محصولات</button>
+        </div>
+        <div class="product-grid" id="productGrid">
+
+    <!-- محصول ۱ -->
+    <div class="product-card" data-category="bijouterie" data-subcategory="bracelet">
+    <a href="products/1.html">
+        <img src="images/1.png" alt="پابند">
+    </a>
+    <h3><a href="products/1.html">پابند</a></h3>
+    <p class="price">110,000 تومان</p>
+    <div class="add-to-cart-group">
+        <div class="quantity-inline">
+            <button onclick="changeQty(this, -1)">-</button>
+            <input type="number" value="1" min="1" max="100" class="qty-input">
+            <button onclick="changeQty(this, 1)">+</button>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, ' پابند ', 85000, 'images/1.png', 15)">
+            افزودن به سبد خرید
+        </button>
+    </div>
+</div>
+
+
+
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="bangle">
+                <a href="products/2.html">
+                    <img src="images/2.png" alt="بنگل">
+                </a>
+                <h3><a href="products/2.html">بنگل</a></h3>
+                <p class="price">280,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'بنگل', 280000, 'images/2.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="bracelet">
+                <a href="products/3.html">
+                    <img src="images/3.png" alt="دستبند">
+                </a>
+                <h3><a href="products/3.html">دستبند</a></h3>
+                <p class="price">120,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'دستبند', 120000, 'images/3.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="earring">
+                <a href="products/4.html">
+                    <img src="images/4.png" alt="گوشواره">
+                </a>
+                <h3><a href="products/4.html">گوشواره</a></h3>
+                <p class="price">160,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'گوشواره', 160000, 'images/4.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="bracelet">
+                <a href="products/5.html">
+                    <img src="images/5.png" alt="دستبند">
+                </a>
+                <h3><a href="products/5.html">دستبند</a></h3>
+                <p class="price">120,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'دستبند', 120000, 'images/5.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="ring">
+                <a href="products/6.html">
+                    <img src="images/6.png" alt="انگشتر کارتیر">
+                </a>
+                <h3><a href="products/6.html">انگشتر کارتیر</a></h3>
+                <p class="price">140,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'انگشتر کارتیر', 140000, 'images/6.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="bangle">
+                <a href="products/7.html">
+                    <img src="images/7.png" alt="بنگل">
+                </a>
+                <h3><a href="products/7.html">بنگل</a></h3>
+                <p class="price">280,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'بنگل', 280000, 'images/7.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="keychain" data-subcategory="all">
+                <a href="products/8.html">
+                    <img src="images/8.png" alt="دسته کلیدهای متحرک">
+                </a>
+                <h3><a href="products/8.html">دسته کلیدهای متحرک</a></h3>
+                <p class="price">150,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'دسته کلیدهای متحرک', 150000, 'images/8.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="keychain" data-subcategory="all">
+                <a href="products/9.html">
+                    <img src="images/9.png" alt="دسته کلیدهای متحرک">
+                </a>
+                <h3><a href="products/9.html">دسته کلیدهای متحرک</a></h3>
+                <p class="price">150,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'دسته کلیدهای متحرک', 150000, 'images/9.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="all" data-subcategory="all">
+                <a href="products/10.html">
+                    <img src="images/10.png" alt="باد بزن">
+                </a>
+                <h3><a href="products/10.html">باد بزن</a></h3>
+                <p class="price">150,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'باد بزن', 150000, 'images/10.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="bangle">
+                <a href="products/11.html">
+                    <img src="images/11.png" alt="بنگل فانتزی">
+                </a>
+                <h3><a href="products/11.html">بنگل فانتزی</a></h3>
+                <p class="price">280,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'بنگل فانتزی', 280000, 'images/11.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="ring">
+                <a href="products/12.html">
+                    <img src="images/12.png" alt="انگشتر مینیمال">
+                </a>
+                <h3><a href="products/12.html">انگشتر مینیمال</a></h3>
+                <p class="price">130,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'انگشتر مینیمال', 130000, 'images/12.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="ring">
+                <a href="products/13.html">
+                    <img src="images/13.png" alt="انگشتر">
+                </a>
+                <h3><a href="products/13.html">انگشتر</a></h3>
+                <p class="price">130,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'انگشتر', 130000, 'images/13.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="ring">
+                <a href="products/14.html">
+                    <img src="images/14.png" alt="انگشتر تک نگین">
+                </a>
+                <h3><a href="products/14.html">انگشتر تک نگین</a></h3>
+                <p class="price">130,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'انگشتر تک نگین', 130000, 'images/14.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="bracelet">
+                <a href="products/15.html">
+                    <img src="images/15.png" alt="دستبند">
+                </a>
+                <h3><a href="products/15.html">دستبند</a></h3>
+                <p class="price">150,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'دستبند', 150000, 'images/15.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hair" data-subcategory="hairband">
+                <a href="products/16.html">
+                    <img src="images/16.png" alt="کش مو ساتن">
+                </a>
+                <h3><a href="products/16.html">کش مو ساتن</a></h3>
+                <p class="price">100,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'کش مو ساتن', 100000, 'images/16.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="bangle">
+                <a href="products/17.html">
+                    <img src="images/17.png" alt="بنگل">
+                </a>
+                <h3><a href="products/17.html">بنگل</a></h3>
+                <p class="price">280,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'بنگل', 280000, 'images/17.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bijouterie" data-subcategory="bangle">
+                <a href="products/18.html">
+                    <img src="images/18.png" alt="بنگل">
+                </a>
+                <h3><a href="products/18.html">بنگل</a></h3>
+                <p class="price">280,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'بنگل', 280000, 'images/18.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hair" data-subcategory="clips">
+                <a href="products/19.html">
+                    <img src="images/19.png" alt="کلیپس">
+                </a>
+                <h3><a href="products/19.html">کلیپس</a></h3>
+                <p class="price">70,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'کلیپس', 70000, 'images/19.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hair" data-subcategory="clips">
+                <a href="products/20.html">
+                    <img src="images/20.png" alt="کلیپس کوچولو">
+                </a>
+                <h3><a href="products/20.html">کلیپس کوچولو</a></h3>
+                <p class="price">50,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'کلیپس کوچولو', 50000, 'images/20.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hair" data-subcategory="hairclip">
+                <a href="products/21.html">
+                    <img src="images/21.png" alt="گیر مو">
+                </a>
+                <h3><a href="products/21.html">گیر مو</a></h3>
+                <p class="price">50,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'گیر مو', 50000, 'images/21.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hair" data-subcategory="hairclip">
+                <a href="products/22.html">
+                    <img src="images/22.png" alt="گیر مو">
+                </a>
+                <h3><a href="products/22.html">گیر مو</a></h3>
+                <p class="price">50,000 تومان</p>
+                <div class="add-to-cart-group">
+                    <div class="quantity-inline">
+                        <button onclick="changeQty(this, -1)">-</button>
+                        <input type="number" value="1" min="1" max="100" class="qty-input">
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCartFromBtn(this, 'گیر مو', 50000, 'images/22.png', 100)">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+        </div>
+            <!-- PRODUCTS_END_HERE -->
+    </section>
+
+    <!-- ==================== فوتر ==================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>🏢 آدرس فروشگاه</h3>
+                <p>کرمانشاه , الهیه , چهار راه نجفی</p>
+                <p>شنبه تا پنجشنبه: صبح ها 10 تا 12/30  ظهر ها 16 تا 20</p>
+            </div>
+            <div class="footer-section">
+                <h3>📞 پشتیبانی</h3>
+                <p>موبایل: 09059629988</p>
+            </div>
+            <div class="footer-section">
+                <h3>🔗 دسترسی سریع</h3>
+                <a href="index.html">صفحه اصلی</a>
+                <a href="#products">محصولات</a>
+                <a href="#" onclick="toggleCart(); return false;">سبد خرید</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© ۱۴۰۳ تمامی حقوق برای <span class="yellow-text">قندک شاپ</span> محفوظ است.</p>
+        </div>
+    </footer>
+
+    <!-- ==================== سبد خرید (پنل کناری) ==================== -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3>🛒 سبد خرید</h3>
+            <span class="close-cart" onclick="toggleCart()">✕</span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">سبد خرید خالی است</p>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;"></div>
+    </div>
+
+    <!-- ==================== مودال فرم سفارش ==================== -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">✕</span>
+            <h2>ثبت سفارش</h2>
+            <div id="orderSummary"></div>
+            <form id="orderForm">
+                <input type="text" id="customerName" placeholder="نام و نام خانوادگی" required>
+                <input type="tel" id="customerPhone" placeholder="شماره تلفن" required>
+                <input type="text" id="customerCity" placeholder="شهر" required>
+                <textarea id="customerAddress" placeholder="( کد پستی ) و آدرس کامل" required></textarea>
+                <button type="submit" class="btn">ثبت سفارش نهایی</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
